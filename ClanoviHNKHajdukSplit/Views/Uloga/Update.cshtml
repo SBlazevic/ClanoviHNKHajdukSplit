@@ -1,0 +1,36 @@
+﻿@model ClanoviHNKHajdukSplit.Models.Uloga
+
+<h1>Ažuriraj podatke o ulozi</h1>
+<br />
+<h4>Uloga: <span style="color: #034ea2">@Model.UlogaNaziv</span></h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="UlogaNaziv" class="control-label"></label>
+                <input asp-for="UlogaNaziv" class="form-control" />
+                <span asp-validation-for="UlogaNaziv" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <input type="submit" value="Spremi" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div><br />
+</div>
+
+<div>
+    <a asp-action="Index">Natrag na popis uloga</a>
+</div>
+<br />
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+
+}
+

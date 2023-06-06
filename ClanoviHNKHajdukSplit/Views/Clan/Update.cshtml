@@ -1,0 +1,55 @@
+﻿@model ClanoviHNKHajdukSplit.Models.Clan
+
+<h1>Ažuriraj podatke o članu</h1><br />
+<h4>Član: <span style="color: #034ea2">@Model.Ime @Model.Prezime</span></h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Ime" class="control-label"></label>
+                <input asp-for="Ime" class="form-control" />
+                <span asp-validation-for="Ime" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <label asp-for="Prezime" class="control-label"></label>
+                <input asp-for="Prezime" class="form-control" />
+                <span asp-validation-for="Prezime" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <label asp-for="SlikaUrl" class="control-label"></label>
+                <input asp-for="SlikaUrl" class="form-control" />
+                <span asp-validation-for="SlikaUrl" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <label asp-for="UlogaId" class="control-label"></label>
+                <select asp-for="UlogaId" class="form-control" asp-items="ViewBag.UlogaId"></select>
+                <span asp-validation-for="UlogaId" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <label asp-for="ClanarinaId" class="control-label"></label>
+                <select asp-for="ClanarinaId" class="form-control" asp-items="ViewBag.ClanarinaId"></select>
+                <span asp-validation-for="ClanarinaId" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <input type="submit" value="Spremi" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div><br />
+</div>
+
+<div>
+    <a asp-action="Index">Natrag na popis članova</a>
+</div>
+<br />
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+
+}
+

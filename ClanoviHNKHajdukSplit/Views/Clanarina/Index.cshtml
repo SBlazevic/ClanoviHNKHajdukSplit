@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Clanarina>
+
+<h1>Popis članarina</h1><br />
+<p>
+    <a asp-action="Create" class="btn btn-success"> Unesi novu članarinu</a>
+</p><br />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Vrsta)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Cijena)</th>
+            <th>Radnje nad podacima</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(modelItem => item.Id)</th>
+                <td>@Html.DisplayFor(modelItem => item.Vrsta)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cijena)</td>
+                <td><a asp-action="Update" asp-route-id="@item.Id" class="btn btn-info"> Uredi</a> | <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Obriši</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

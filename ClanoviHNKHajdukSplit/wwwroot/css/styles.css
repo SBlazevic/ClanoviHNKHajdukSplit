@@ -1,0 +1,53 @@
+﻿.text-muted {
+    color: white !important;
+}
+
+.footer {
+    background: linear-gradient(to right, #d2232a 50%, #034ea2 50%);
+}
+
+.clan-img {
+    object-fit: cover;
+}
+
+tr {
+    background: #FBFBFB;
+}
+
+th {
+    vertical-align: middle;
+}
+
+td {
+    vertical-align: middle;
+}
+
+.btn-info {
+    background-color: #034ea2;
+    border-color: #034ea2;
+    color: white;
+}
+
+.btn-info:hover {
+     background-color: #034ea2;
+     border-color: #034ea2;
+     color: white;
+}
+
+.btn-danger {
+    background-color: #d2232a;
+    border-color: #d2232a;
+}
+
+.btn-danger:hover {
+    background-color: #d2232a;
+    border-color: #d2232a;
+}
+
+.text-dark {
+    color: gray !important; 
+}
+
+.navbar-brand {
+    color: #034ea2 !important;
+}
